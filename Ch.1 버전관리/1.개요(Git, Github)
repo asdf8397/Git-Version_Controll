@@ -1,0 +1,68 @@
+버전관리_Git
+git: git은 컴퓨터 파일의 변경사항을 추적하고 여러 사용자들 간의 해당 파일작업
+을 조율하기 위한 대표적인 버전 관리(VCS)입니다.
+
+<git사용방법>
+Windows운영체제의 github사용법
+
+1. windows 검색창에서 cmd실행
+검정색 화면에서 "git --version"을 검색해보면 설치가 되어있지않음
+git은 내부 또는 외부 명령 실행할 수 있는 프로그램 또는 패치 파일이 아닙니다.라고 나온다.
+
+2. git을 다운로드
+검색창에 "git"검색하면 git홈페이지가 나온다. https://git-scm.com/
+"Latest source Release"의 2.33.1 향후 버전이 달라질수있음
+Download for windows를 눌러서 다운로드 받아준다.
+다운로드를 받은후 NEXT를 눌러서 다운로드를 진행하면된다.
+
+3. github의 회원가입, 로그인
+검색창에 github에서 로그인하거나 회원가입을 해주고 github에 입장한다.
+
+4. VSCODE git 설정하기
+VSCODE의 상위메뉴바의 terminal을 클릭하고 New terminal을 열고
+terminal에서 "git --version"을 치면 git의 버전이 나온다
+버전이 나오면 git이 잘 설치되었다는것
+
+5. VSCODE에서 버전관리
+작업을 다했는 파일들이 있어야한다.
+일단 terminal에서 "git init"을 치고 Enter를 누르면 작업물들이
+Source Control(소스제어)에 올라간다.
+
+그리고 "git config --global core.autocrlf true"를 치고 Enter를 치고
+
+"git config --global user.name 'asdf8397'" user.name은 github의 name은
+가입한 github의 닉네임을 넣어준다.
+그리고 그 다음 "git config --global user.email 'scv2314@naver.com'"을
+넣어준다 여기서 email은 사용자와 매칭할때 사용하므로 다른 이메일 주소를 넣으면
+안된다.(email은 딱 1번만 넣어주면된다.)
+
+지금 지정한 정보가 정상적으로 등록되었는지 확인하기위해서
+"git config --global --list"를하고 Enter를 넣어주면 입력값이 나온다
+
+지금 프로젝트의 버전관리 상태를 확인하려고한다 "git status"를 작성해준다
+그러면 빨간색 글자로 나오게된다.
+
+6. VSCODE의 버전관리했는 것을 github에 올려줄때
+"git add ." Enter누르고 "git status"를 Enter를 누르면 빨간색 글자로 나오는
+글자들이 초록색으로뜨고 초록색으로 등록된 것들은 이제 버전관리를 하겠다는 의미
+
+"git commit -m 'Start project'"를 Enter되면 Master로 변하게되고
+Master가 됐는지 확인하는방법은 "git log"를 누르고 Enter를 해주면
+head → Master됐다는게 나온다.
+
+github홈페이지에서 repositories에서 업로드할 파일을 생성한다
+repositories에서 New를 눌러서 Create a new repository에서 repository name
+에서 생성할 repository이름을 작성해주고 create repository를 눌러서
+repository에서 저장소를 생성해준다.
+
+repository에 생성한 저장소에 저장소 주소 복사한후
+터미널에서 "git remote add origin '저장소 복사한 주소를 붙여준다'" Enter를
+눌러주면 등록이됐고 "git push origin master" enter를 누르면 업로드해주게된다
+
+처음 업로드하면 확장'Github'은 Github를 사용하여 로그인 하려고합니다라고 
+권한이 나오게 되고 허용을 눌러줘서 Authorize Visual Studio Code to Access Github
+이라고 나오고 continue를 누르고 Authorize github이라고 초록색 누르는 버튼이
+나온다 Authorize github누르면 Confirm access나오고 비밀번호를 인증을 해주고
+Success가 나오고 홈페이지에서 Visual Studo Code.app을 여시겠습니까에서
+Visual Stuido Code.app열기를 눌러서 VSCODE가 열리면서 password입력란이
+나온다 여기서 github의 password를 눌러주면 github에 제대로 업로드 된것

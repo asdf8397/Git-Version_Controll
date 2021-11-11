@@ -1,0 +1,109 @@
+# 개행문자(New line)설정
+
+## Windows운영체제의
+$ git config --global core.autocrlf true
+git으로 사용할수있게 설정한다.
+
+
+# 사용자 정보
+## 커밋(버전생성)을 위한 정보 등록
+$ git config --global user.name 'YOUR_NAME'
+$ git config --global user.email 'YOUR_EMAIL'
+버전을 생성할때 여기있는 유저Name과 Email로 됐는지 name과 email로 확인한다.
+
+
+# 구성확인
+$ git config --global --list
+등록한 목록들이 목록 list로 쭉 볼때
+
+
+$ git init 
+# 현재 프로젝트에서 변경사항 추적(버전관리)를 시작한다.
+현재있는 프로젝트들을 github로 올리기전 프로젝트들을 추적하게한다
+공유섹터의 설정에 올라가게 된다.
+
+
+$ git add index.html
+# 변경사항을 추적 특정파일(index.html)을 지정
+git add를 통해서 특정파일을 관리할것이라고 지정할수있다.
+특정파일을 지정할수있다. git add index.html
+
+
+$ git add.
+# 모든 파일의 변경사항을 추적하도록 지정
+프로젝트를 작업을 하던 모든 파일들을 공유하는섹터(스테이지)에 올라가게하면서
+추적할수있게 지정된다.
+
+
+$ git commit -m '프로젝트 생성'
+# 메모(-m)와 함께 버전을 생성
+특정한 버전을 생성할수있고 여기서 git commit은 버전을 생성하겠다.
+-m은 버전의 이름을 명시해줄수있다.
+
+
+$ git add.
+# 모든 파일의 변경사항을 추적하도록 지정
+예를 들어 master안에 index.html, main.css, favicon.png 파일이 있는데
+main.js파일을 새로 생성하게 된다면 "git.add"로 모든 파일의 변경사항을 추적
+하도록 지정할수있다.
+
+쉽게말해서 github를 설정해놓으면 VSCODE에서 파일을 생성후 Ctrl + S키를
+누르면 저장되고 스테이지로 올라가는데 이는 git add.를 누른 것과 같은 이치다
+
+
+$ git commit -m 'main.js 추가'
+# 메시지(-m)와 함께 버전을 생성
+git commit -m 'main.js 추가'는 main.js를 추가한 버전을 생성하는것
+
+쉽게말해서 작업한 파일을 Ctrl + S를 누르면 자동적으로 스테이지에 올라가고
+스테이지에 올라간 파일은 commit하면 github에 추가되게 된다
+여기서 push를 눌러야지 등록되게 된다.
+
+
+$ git add.
+# 모든 파일의 변경사항을 추적하도록 지정
+예시 만약 master안에 index.html, main.css, favicon.png, main.js파일이
+있는데 여기서 index.html, main.css파일을 변경했을때 "git add."을 해주면
+모든 파일의 변경사항을 추적하게 지정되게 된다 고로 index.html, main.css의
+변경된 파일들이 추적되게 변한다.
+
+쉽게말해서 github를 설정해놓으면 VSCODE에서 파일을 생성후 Ctrl + S키를
+누르면 저장되고 스테이지로 올라가는데 이는 git add.를 누른 것과 같은 이치다
+
+
+$ git commit -m 'index.html 수정'
+#메시지(-m)와 함께 버전을 생성
+git commit -m 'index.html 수정'은 index.html을 추가한 버전을 생성하는 것
+
+쉽게말해서 작업한 파일을 Ctrl + S를 누르면 자동적으로 스테이지에 올라가고
+스테이지에 올라간 파일은 commit하면 github에 추가되게 된다
+여기서 push를 눌러야지 등록되게 된다.
+
+
+github(remote, 원격)
+github은 remote를 해주고 지금의 컴퓨터가 아닌 외부의 원격에 현재의 파일을 
+올린다
+
+my_repository(저장소)
+원격의 저장소를 만들고 repository(저장소)에 파일을 추가한다.
+
+$ git remote add origin https://github.c...
+# origin이란 별칭으로 원격 저장소를 연결
+
+$ git remote add origin 원격의 저장소에 지금 완료한 파일을 올릴것이고
+https://github.c.... repository의 저장소주소에.... 파일을 전송하고 올릴
+원격의 저장소에 올릴곳의 주소
+
+
+$ git push origin master
+# origin이란 별칭의 원격 자종소로 버전 내역 전송.
+
+git push origin master는 원격의 저장소 $ git remote add origin으로
+연결한 저장소의 연결은 끝났고 연결한 저장소에 스테이지에 올라와있는 파일들
+을 밀어넣을때 git push origin master ___ 쉽게말해 push 밀어넣을때 사용된다.
+
+git push origin master: 스테이지에 commit한 파일을 push를 버튼을 누른것과
+같다.
+
+origin은 별칭의 이름이고 설정할때 origin말고 다른 별칭의 이름을 사용해줄수도
+있지만 origin의 사용빈도가 높다 origin으로 보통 설정할 것
